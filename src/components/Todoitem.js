@@ -36,9 +36,7 @@ export class Todoitem extends Component {
     )
   }
 }
-Todoitem.PropTypes = {
-  todo: PropTypes.object.isRequired
-}
+
 
 const btnStyle = {
   background: '#ff0000',
@@ -48,6 +46,12 @@ const btnStyle = {
   borderRadius: '50%',
   cursor: 'pointer',
   float: 'right'
+}
+
+Todoitem.PropTypes = {
+  todos : PropTypes.array.isRequired ,
+  markComplete : PropTypes.func.isRequired ,
+  delTodo : PropTypes.func.isRequired 
 }
 
 

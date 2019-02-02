@@ -48,6 +48,15 @@ class App extends Component {
     });
   }
 
+  addTodo = (title) => {
+    const newTodo = {
+      id: 4,
+      title ,
+      completed: false
+    }
+    this.setState({ todos : [...this.state.todos , newTodo]})
+  }
+
   render() {
 
     return (
@@ -55,7 +64,18 @@ class App extends Component {
 
         <div className="container">
           <Header />
-          <Addtodo />
+          <Addtodo addTodo={this.addTodo} />
           <Todos
             markComplete={this.markComplete}
-    
+            todos={this.state.todos}
+            delTodo={this.delTodo}>
+          </Todos>
+        </div>
+
+
+      </div>
+    );
+  }
+}
+
+export default App;
